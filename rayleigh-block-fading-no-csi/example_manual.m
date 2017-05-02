@@ -38,11 +38,6 @@ if MODE(DT_index) == 1,
             error('Prec too small');
         end
     end
-    if (exist(filename, 'file') == 0)
-        save(filename, 'R_DT');
-    else
-        save(filename, 'R_DT', '-append');
-    end
 end
 
 if (MODE(original_MC_index) == 1 || MODE(new_MC_index) == 1),
