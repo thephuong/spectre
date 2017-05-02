@@ -95,6 +95,10 @@ if (MODE(orig_new_MC_4x4_index) == 1),
             error('Error 101');
         end
         Mtalt = randi(Mtm); %Mt = 4
+        if (nc < Mtalt + 4)
+            warning('nc=%d < Mtalt+Mr=%d+4=%d not supported by USTM, it is BSTM', nc, Mtalt, Mtalt+4);
+            continue;
+        end
         
         fprintf(1, 'MC 4x4 bound for nc=%d l=%d Mtalt=%d\n', nc, l, Mtalt);
         % original code
