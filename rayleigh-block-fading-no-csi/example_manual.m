@@ -55,7 +55,7 @@ if (MODE(original_MC_index) == 1 || MODE(new_MC_index) == 1),
         % New code
         rr2 = -1;
         if (MODE(new_MC_index) == 1)
-            rr2 = compute_MC_2x2_telatar_MC_Mt_x_Mr(snrdB, nc , l, epsilon);
+            rr2 = example_compute_MC_2x2_telatar_Mt_x_Mr(snrdB, nc , l, epsilon);
             disp(rr2);
         end
         R_MC_opt(i) = rr1;
