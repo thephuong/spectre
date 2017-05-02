@@ -52,20 +52,6 @@ for k=1:K
 
         %Create each realization
         for l = 1:L
-%             x1=(Mtalt/Mt)*rho_tilde*(2*pow_all(l));
-%             x2=(Mtalt/Mt)*rho_tilde*2*(1-pow_all(l));
-%             D= [diag([sqrt(1+x1), sqrt(1+x2)]), zeros(Mt,T-Mt);
-%     zeros(T-Mt,Mt), eye(T-Mt)]; % D matrix (covariance matrix of equivalent noise)
-%             c1 = Mtalt*(T-Mtalt)*log(lambda2) + Mr*Mtalt*log(lambda) + Mr*log(1/(1+x1))+Mr*log(1/(1+x2)); % SNR constant
-%             const = c1+c2;
-
-            %pow_all_frac is Mt-dimension showing the fraction of power
-            %over Mt tx antenna : sum(pow_all_frac) = 1
-            % (Mtalt/Mt)*rho_tilde == T*rho/Mt
-            
-            % Optim
-%             x = Mtalt *rho_tilde * pow_all_frac(l,:);
-
             % D matrix (covariance matrix of equivalent noise)
             D = [diag(sqrt(1+xx(l,:))), zeros(Mt,T-Mt);
                 zeros(T-Mt,Mt), eye(T-Mt)];
@@ -73,8 +59,7 @@ for k=1:K
             
             % compute samples of information density log dPy|x/dQy for y~ Py|x
             
-            Sigma=svd(D*Z(:,:,l)).^2; 
-            SigmaAlt=Sigma*lambda2;
+            Sigma=svd(D*Z(:,:,l)).^2;
             
             % Create matrix M, automatic
             M = createM(Mtalt,Mr,T,Sigma,lambda2);
@@ -86,6 +71,7 @@ for k=1:K
             ip = const- TraceZ  + lambda1*sum(Sigma) - logdetM + log(vanderTerm) + logDetSigma;%Information density for time l (i(x_l, y_l)
             i_Lp = i_Lp + ip; %add it to the total i_L
             
+%             SigmaAlt=Sigma*lambda2;
 %             % Create matrix M, manual
 %             if (Mtalt==1)
 %                 a1=gammainc(lambda2*Sigma(1),T-2);
@@ -225,6 +211,7 @@ function val = logComplexGammaRatio(Mt,Mr,T)
     end
 end
 
+%% TODO: need to optimize it, i.e. avoid exp(.)
 function M = createM(Mt,Mr,T,Sigma,lambda)
     M = nan(Mr,Mr); %(l is the row, k is the column)
     for l = 1:Mr,

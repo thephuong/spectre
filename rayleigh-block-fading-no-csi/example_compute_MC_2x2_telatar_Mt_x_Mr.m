@@ -16,18 +16,8 @@ Ralt2=zeros(numIt,1);
 for ii=1:1:numIt, % try all points according to generalized Telatar conjecture
     %numIt-ii;
     bstring=dec2bin(2^(ii-1)-1,L);
-    
-%     pow_all=zeros(1,L);
-%     for k=1:1:L,
-%         pow_all(k)=str2num(bstring(k))*0.5;        
-%     end
-    
     filename = ''; %create filename of raw data
-%     Ralt1(ii)=MC_USTM_Mt_x_Mr(snrdB,T,L,1,2,2,epsilon,prec,pow_all,filename);
-%     Ralt2(ii)=MC_USTM_Mt_x_Mr(snrdB,T,L,2,2,2,epsilon,prec,pow_all,filename);
-    
-%     Ralt1(ii)=MC_USTM_2x2(snrdB,T,L,1,epsilon,prec,pow_all,filename);
-%     Ralt2(ii)=MC_USTM_2x2(snrdB,T,L,2,epsilon,prec,pow_all,filename);
+
     btmp = reshape(bstring - '0', [], 1);
     pow_all_frac = [btmp, 2-btmp] / 2;
     Ralt1(ii)=MC_USTM_Mt_x_Mr(snrdB,T,L,1,2,2,epsilon,prec,pow_all_frac,filename);
