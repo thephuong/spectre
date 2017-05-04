@@ -6,7 +6,12 @@
 % the realization fading block index l over Mt antenna. Sum of a row of Mt elements must be 1.
 %%
 function [R,current_eps,current_prec]=MC_USTM_Mt_x_Mr(snrdB,T,L,Mtalt,Mt,Mr, ...
-    epsilon,prec,pow_all,filename)
+    epsilon,prec,pow_all,filename,use_complete_search)
+
+if (nargin <= 10)
+    use_complete_search = 0;
+end
+
 %
 % note: 
 %-------------------------------------------------------------------
@@ -138,7 +143,7 @@ K=2^(current_prec); % round off K to avoid search errors
 step=K/2;
 index=step;
 
-onevec=ones(K,1);
+% onevec=ones(K,1);
 
 while(step>1),
     
@@ -169,36 +174,34 @@ end
 
 
 
-%complete search--somewhat slower
-% for ii=1:K-index+1,
-%
-%     current_rate=Ip(ii+index-1)-log(sum(Ip<=Ip(ii+index-1))/K-epsilon);
-%
-%     Rvect(ii)=current_rate;
-%
-% end
-% R=min(Rvect)/(L*T*log(2));
-    
-%faster search (potentially less tight)
-
-count=0;
-
-R=Ip(index)-log(sum(Ip<=Ip(index))/K-epsilon);
-
-% can be replaced by parfor
-for ii=1:K-index+1, 
-    current_rate=Ip(ii+index-1)-log(sum(Ip<=Ip(ii+index-1))/K-epsilon);  
-    if current_rate<= R
-        R=current_rate;
-     else
-       count=count+1;
+% complete search--somewhat slower
+% TPN: slower of course, but tighter and avoid confusing case T=8 L=5
+% SNR=-8dB and SNR=-12dB
+if (use_complete_search)
+    Rvect = Inf(1,K-index+1);
+    for ii=1:K-index+1,
+        current_rate=Ip(ii+index-1)-log(sum(Ip<=Ip(ii+index-1))/K-epsilon);
+        Rvect(ii)=current_rate;
     end
-     
-    if count==20,
-      break
+    R=min(Rvect)/(L*T*log(2));
+else    
+    %faster search (potentially less tight)
+    count=0;
+    R=Ip(index)-log(sum(Ip<=Ip(index))/K-epsilon);
+    % can be replaced by parfor
+    for ii=1:K-index+1,
+        current_rate=Ip(ii+index-1)-log(sum(Ip<=Ip(ii+index-1))/K-epsilon);  
+        if current_rate<= R
+            R=current_rate;
+        else
+            count=count+1;
+        end
+        if count==20,
+            break
+        end
     end
+    R=R/(L*T*log(2));
 end
-R=R/(L*T*log(2)); 
 
 end
 
