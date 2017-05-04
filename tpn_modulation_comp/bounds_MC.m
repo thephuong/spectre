@@ -78,19 +78,20 @@ cur_eps_dsss = zeros(lenSNR, numIt);
 if (Mr ~= 2 || Mr*G ~= 4)
     error('not supported yet Mr=%d G=%d', Mr, G);
 end
+use_complete_search = 1;
 for i = 1:lenSNR
     %% Normal SU
     %Mt=1 then there is no optimization over TX antenna power distribution
     infos_unb = sprintf('MC bound, nSU UNB, snr=%d', snrdB_tab(i));
     disp(infos_unb);
-    [Ralt1_unb(i), cur_eps_unb(i), ~] = MC_USTM_Mt_x_Mr(snrdB_tab(i), nc, l, 1, 1, 2, epsilon, prec, ones(l,1), '');
+    [Ralt1_unb(i), cur_eps_unb(i), ~] = MC_USTM_Mt_x_Mr(snrdB_tab(i), nc, l, 1, 1, 2, epsilon, prec, ones(l,1), '', use_complete_search);
     fprintf(1, 'UNB snr=%d, R=%.5f eps=%.5f/epsilon=%.5f\n', snrdB_tab(i), Ralt1_unb(i), cur_eps_unb(i), epsilon);
     save(filename);
 
     infos_dsss = sprintf('MC bound, nSU DSSS, snr=%d', snrdB_tab(i));
     disp(infos_dsss);
     [Ralt1_dsss(i), cur_eps_dsss(i), ~] = MC_USTM_Mt_x_Mr(snrdB_tab(i)-logG2, nc, l, 1, 1, 4 ... %is Mr*G=2*2=4
-        , epsilon, prec, ones(l,1), '');
+        , epsilon, prec, ones(l,1), '', use_complete_search);
     fprintf(1, 'DSSS snr=%d, R=%.5f eps=%.5f/epsilon=%.5f\n', snrdB_tab(i), Ralt1_dsss(i), cur_eps_dsss(i), epsilon);
     save(filename);
     
@@ -101,14 +102,14 @@ for i = 1:lenSNR
 % %         pow_all = [btmp, btmp, 2-btmp, 2-btmp] / 4;     %4 virtual antennas Mr
 %         infos_unb = sprintf('MC bound, nSU UNB, snr=%3d, ii=%d/%d', snrdB_tab(i), ii, numIt);
 %         disp(infos_unb);
-%         [Ralt1_unb(i, ii), cur_eps_unb(i, ii), ~] = MC_USTM_Mt_x_Mr(snrdB_tab(i), nc, l, 1, 1, 2, epsilon, prec, ([btmp, 2-btmp]/2), '');
+%         [Ralt1_unb(i, ii), cur_eps_unb(i, ii), ~] = MC_USTM_Mt_x_Mr(snrdB_tab(i), nc, l, 1, 1, 2, epsilon, prec, ([btmp, 2-btmp]/2), '', use_complete_search);
 %         fprintf(1, 'UNB snr=%3d, ii=%d/%d, R=%d eps=%.5f/epsilon=%.5f\n', snrdB_tab(i), ii, numIt, Ralt1_unb(i, ii), cur_eps_unb(i, ii), epsilon);
 %         save(filename);
 %         
 %         infos_dsss = sprintf('MC bound, nSU DSSS, snr=%3d, ii=%d/%d', snrdB_tab(i), ii, numIt);
 %         disp(infos_dsss);
 %         [Ralt1_dsss(i, ii), cur_eps_dsss(i, ii), ~] = MC_USTM_Mt_x_Mr(snrdB_tab(i)-logG2, nc, l, 1, 1, 4 ... %is Mr*G=2*2=4
-%             , epsilon, prec, ([btmp, btmp, 2-btmp, 2-btmp]/4), '');
+%             , epsilon, prec, ([btmp, btmp, 2-btmp, 2-btmp]/4), '', use_complete_search);
 %         fprintf(1, 'DSSS snr=%3d, ii=%d/%d, R=%d eps=%.5f/epsilon=%.5f\n', snrdB_tab(i), ii, numIt, Ralt1_dsss(i, ii), cur_eps_dsss(i, ii), epsilon);
 %         save(filename);
 %     end
