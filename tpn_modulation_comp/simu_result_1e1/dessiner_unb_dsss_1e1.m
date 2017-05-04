@@ -2,8 +2,13 @@
 % 20170502 : UNB and DSSS nSU, MU case is just a scale. fSU case too long
 %%
 
-load('2017_5_2_18_29_MC.mat', 'snrdB_tab', 'Ralt1_unb', 'Ralt1_dsss','l','nc','epsilon');
-load('DT_nSU.mat', 'R_DT_unb_nSU', 'R_DT_dsss_nSU');
+% load('2017_5_2_18_29_MC_1e1.mat', 'snrdB_tab', 'Ralt1_unb', 'Ralt1_dsss','l','nc','epsilon'); % this one no fliplr
+load('2017_5_4_18_44_MC_1e1.mat', 'snrdB_tab', 'Ralt1_unb', 'Ralt1_dsss','l','nc','epsilon'); % be careful this one is fliplr
+snrdB_tab = fliplr(snrdB_tab);
+Ralt1_unb = flipud(Ralt1_unb);
+Ralt1_dsss = flipud(Ralt1_dsss);
+
+load('DT_nSU_1e1.mat', 'R_DT_unb_nSU', 'R_DT_dsss_nSU');
 
 R_dt_unb_plot = R_DT_unb_nSU;
 R_dt_unb_plot(R_DT_unb_nSU == -1) = 0;
