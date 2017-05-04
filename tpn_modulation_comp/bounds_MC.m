@@ -6,7 +6,7 @@ addpath('../rayleigh-block-fading-no-csi/');
 
 %% simulation point
 epsilon = 1e-1;
-prec = round(log2(100/epsilon))+2;
+prec = round(log2(100/epsilon));
 seuil = epsilon / 10;   % This threshold has a HUGE impact in simulation time
 ntry_max = 4;
 ntry_step = 5;          % this one, too
