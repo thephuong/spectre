@@ -1,0 +1,123 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2016 The MathWorks, Inc.
+                   R2016a (9.0.0.341360) 64-bit (glnxa64)
+                             February 11, 2016
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+
+	This is a Classroom License for instructional use only.
+	Research and commercial use is prohibited.
+
+MC bound, nSU UNB, snr=35
+UNB snr=35, R=8.27040 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=35
+DSSS snr=35, R=9.30761 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=30
+UNB snr=30, R=6.99605 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=30
+DSSS snr=30, R=7.92538 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=25
+UNB snr=25, R=5.51167 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=25
+DSSS snr=25, R=6.49331 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=20
+UNB snr=20, R=4.13147 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=20
+DSSS snr=20, R=5.05832 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=18
+UNB snr=18, R=3.57552 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=18
+DSSS snr=18, R=4.48438 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=16
+UNB snr=16, R=3.11964 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=16
+DSSS snr=16, R=3.85199 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=14
+UNB snr=14, R=2.53293 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=14
+DSSS snr=14, R=3.33885 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=12
+UNB snr=12, R=2.09393 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=12
+DSSS snr=12, R=2.80894 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=10
+UNB snr=10, R=1.57743 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=10
+DSSS snr=10, R=2.14420 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=8
+UNB snr=8, R=1.21437 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=8
+DSSS snr=8, R=1.73990 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=6
+UNB snr=6, R=0.89759 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=6
+DSSS snr=6, R=1.21899 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=4
+UNB snr=4, R=0.65697 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=4
+DSSS snr=4, R=0.80936 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=2
+UNB snr=2, R=0.38310 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=2
+DSSS snr=2, R=0.51778 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=0
+UNB snr=0, R=0.22672 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=0
+DSSS snr=0, R=0.27471 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=-2
+UNB snr=-2, R=0.13141 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=-2
+DSSS snr=-2, R=0.12023 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=-4
+UNB snr=-4, R=0.09162 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=-4
+DSSS snr=-4, R=0.08263 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=-6
+UNB snr=-6, R=0.07415 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=-6
+DSSS snr=-6, R=0.06822 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=-8
+UNB snr=-8, R=0.06245 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=-8
+DSSS snr=-8, R=0.05826 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=-10
+UNB snr=-10, R=0.05258 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=-10
+DSSS snr=-10, R=0.04828 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=-12
+UNB snr=-12, R=0.04346 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=-12
+DSSS snr=-12, R=0.03873 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=-14
+UNB snr=-14, R=0.03512 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=-14
+DSSS snr=-14, R=0.03025 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=-16
+UNB snr=-16, R=0.02745 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=-16
+DSSS snr=-16, R=0.02284 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=-18
+UNB snr=-18, R=0.02090 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=-18
+DSSS snr=-18, R=0.01685 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=-20
+UNB snr=-20, R=0.01549 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=-20
+DSSS snr=-20, R=0.01216 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=-25
+UNB snr=-25, R=0.00669 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=-25
+DSSS snr=-25, R=0.00503 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=-30
+UNB snr=-30, R=0.00266 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=-30
+DSSS snr=-30, R=0.00192 eps=0.00001/epsilon=0.00001
+MC bound, nSU UNB, snr=-35
+UNB snr=-35, R=0.00100 eps=0.00001/epsilon=0.00001
+MC bound, nSU DSSS, snr=-35
+DSSS snr=-35, R=0.00071 eps=0.00001/epsilon=0.00001
+>> 
